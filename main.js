@@ -21,7 +21,7 @@ function divide(firstNum, secondNum) {
     }
     else {
         return firstNum / secondNum;
-}
+    }
     }
 
 function operate(operator, firstNum, secondNum) {
@@ -42,7 +42,11 @@ function operate(operator, firstNum, secondNum) {
 }
 
 function updateDisplay(element) {
-    display.textContent += (typeof element === "string") ?  ` ${element} ` : element;
+    if (String(display.textContent).includes(".")) {
+        element = "";
+    }
+    display.textContent += (typeof element === "string" && element !== ".")
+     ?  ` ${element} ` : element;
     evaluate();
 }
 
@@ -55,10 +59,24 @@ function clearDisplay() {
 
 function evaluate() {
     let expression = display.textContent.trim().split(" ");
-    if (expression.length >= 3) {
+    if (expression.length > 3) {
         operate(expression[1], Number(expression[0]), Number(expression[2]));
-        totalDisplay.textContent = total.toFixed(2);
-        display.textContent = total.toFixed(2);
+        totalDisplay.textContent = total.toFixed(3);
+        display.textContent = total.toFixed(3);
         
     }
 }
+
+function solveExpression() {
+    let expression = display.textContent.trim().split(" ");
+    if (expression.length === 3) {
+        operate(expression[1], Number(expression[0]), Number(expression[2]));
+        totalDisplay.textContent = total.toFixed(3);
+        display.textContent = total.toFixed(3);
+    }
+    else {
+        totalDisplay.textContent = "Error";
+        display.textContent = "";
+    }
+}
+
