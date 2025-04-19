@@ -42,7 +42,7 @@ function operate(operator, firstNum, secondNum) {
 }
 
 function updateDisplay(element) {
-    if (String(display.textContent).includes(".")) {
+    if (String(display.textContent).includes(".") && element === ".") {
         element = "";
     }
     display.textContent += (typeof element === "string" && element !== ".")
