@@ -45,9 +45,12 @@ function updateDisplay(element) {
     if (String(display.textContent).includes(".") && element === ".") {
         element = "";
     }
-    display.textContent += (typeof element === "string" && element !== ".")
-     ?  ` ${element} ` : element;
-    evaluate();
+    
+    if (element != "") {
+        display.textContent += (typeof element === "string" && element !== ".")
+        ?  ` ${element} ` : element;
+       evaluate();
+    }
 }
 
 function clearDisplay() {
