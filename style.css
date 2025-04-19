@@ -10,15 +10,17 @@ body {
 .total {
     height: 60px;
     font-size: 60px;
+    margin-left: 15px;
 }
 
 .display {
     height: 50px;
     font-size: 40px;
+    margin-left: 15px;
 }
 .buttons-container {
     display: flex;
-    width: 500px;
+    width: 600px;
     height: 500px;
 }
 

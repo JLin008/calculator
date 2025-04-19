@@ -8,27 +8,28 @@
 </head>
 <body>
     <div class="container">
-        <div class="total">10</div>
-        <div class="display">1+1</div>
+        <div class="total"></div>
+        <div class="display"></div>
         <div class="buttons-container">
+            <button class="operator" onclick="clearDisplay()">Clear</button>
             <div class="numbers-container">
-                <button class="number">1</button>
-                <button class="number">2</button>
-                <button class="number">3</button>
-                <button class="number">4</button>
-                <button class="number">5</button>
-                <button class="number">6</button>
-                <button class="number">7</button>
-                <button class="number">8</button>
-                <button class="number">9</button>
-                <button class="number">0</button>
+                <button class="number" onclick="updateDisplay(1)">1</button>
+                <button class="number" onclick="updateDisplay(2)">2</button>
+                <button class="number" onclick="updateDisplay(3)">3</button>
+                <button class="number" onclick="updateDisplay(4)">4</button>
+                <button class="number" onclick="updateDisplay(5)">5</button>
+                <button class="number" onclick="updateDisplay(6)">6</button>
+                <button class="number" onclick="updateDisplay(7)">7</button>
+                <button class="number" onclick="updateDisplay(8)">8</button>
+                <button class="number" onclick="updateDisplay(9)">9</button>
+                <button class="number" onclick="updateDisplay(0)">0</button>
             </div>
             <div class="operator-container">
-                <button class="operator">Clear</button>
-                <button class="operator">/</button>
-                <button class="operator">*</button>
-                <button class="operator">-</button>
-                <button class="operator">+</button>
+                <button class="operator" onclick="updateDisplay(`/`)">/</button>
+                <button class="operator" onclick="updateDisplay(`*`)">*</button>
+                <button class="operator" onclick="updateDisplay(`-`)">-</button>
+                <button class="operator" onclick="updateDisplay(`+`)">+</button>
+                <button class="operator">=</button>
             </div>
             
         </div>
